@@ -1,0 +1,226 @@
+@import 'tailwindcss';
+
+@config '../../tailwind.config.js';
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #000000;
+
+    --card: #ffffff;
+    --card-foreground: #000000;
+
+    --popover: #ffffff;
+    --popover-foreground: #000000;
+
+    --primary: #000000;
+    --primary-foreground: #ffffff;
+
+    --secondary: #f4f4f5;
+    --secondary-foreground: #000000;
+
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a;
+
+    --accent: #f4f4f5;
+    --accent-foreground: #000000;
+
+    --destructive: #ff0000;
+    --destructive-foreground: #ffffff;
+
+    --border: #e4e4e7;
+    --input: #e4e4e7;
+    --ring: #000000;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #000000;
+    --foreground: #ffffff;
+
+    --card: #000000;
+    --card-foreground: #ffffff;
+
+    --popover: #000000;
+    --popover-foreground: #ffffff;
+
+    --primary: #ffffff;
+    --primary-foreground: #000000;
+
+    --secondary: #18181b;
+    --secondary-foreground: #ffffff;
+
+    --muted: #18181b;
+    --muted-foreground: #a1a1aa;
+
+    --accent: #18181b;
+    --accent-foreground: #ffffff;
+
+    --destructive: #ff4d4d;
+    --destructive-foreground: #ffffff;
+
+    --border: #27272a;
+    --input: #27272a;
+    --ring: #ffffff;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Personalizações Extras */
+
+.custom-audio-player::-webkit-media-controls-panel {
+  display: flex;
+}
+
+.custom-audio-player::-webkit-media-controls-timeline,
+.custom-audio-player::-webkit-media-controls-volume-slider-container,
+.custom-audio-player::-webkit-media-controls-play-button {
+  display: block;
+}
+
+.custom-audio-player::-webkit-media-controls-overflow-button {
+  display: none !important;
+}
+
+.text-stroke {
+  -webkit-text-stroke-width: 4px;
+  background-clip: text;
+}
+
+.bg-card-background {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), rgba(50, 103, 78, 0.37);
+}
+
+.header-gradient {
+  background: linear-gradient(180deg, #ffffff 22.5%, rgba(255, 255, 255, 0.7) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-background {
+  background: radial-gradient(
+    70.71% 70.71% at 50% 50%,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.green-btn-gradient {
+  background: linear-gradient(180deg, rgba(38, 171, 117, 0.9) 0%, #26ab75 100%);
+}
+
+.blue-gradient {
+  background: linear-gradient(188deg, #0f6fff 7.48%, #1e53a3 94.97%);
+}
+
+.grey-gradient {
+  background: linear-gradient(180deg, #ffffff 22.5%, rgba(255, 255, 255, 0.7) 100%);
+  background-clip: text;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dfdfdf;
+  border-radius: 10px;
+}
+
+/* Estilização do Slick Carousel */
+
+.slick-slide > div {
+  padding: 16px;
+}
+
+.slick-arrow {
+  position: absolute !important;
+  top: -150px !important;
+}
+
+.slick-next {
+  right: 75px !important;
+}
+
+.slick-prev {
+  left: 75px !important;
+}
+
+.slick-next:before {
+  content: '' !important;
+  background-image: url('/lp-11-right-arrow.svg') !important;
+  border-radius: 24px;
+  background: #434343;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+}
+
+.slick-prev:before {
+  content: '' !important;
+  background-image: url('/lp-11-left-arrow.svg') !important;
+  border-radius: 24px;
+  background: #434343;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 1024px) {
+  .slick-arrow {
+    top: -240px !important;
+  }
+
+  .slick-next {
+    right: 130px !important;
+  }
+
+  .slick-prev {
+    left: 130px !important;
+  }
+
+  .slick-next:before,
+  .slick-prev:before {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
